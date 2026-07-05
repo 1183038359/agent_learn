@@ -1,0 +1,1726 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 算法工程师技能图谱与学习计划</title>
+  <style>
+    :root {
+      --bg: #f7f8f4;
+      --paper: #ffffff;
+      --ink: #17211d;
+      --muted: #5e6a64;
+      --line: #d8ddd4;
+      --soft: #edf1e9;
+      --soft-2: #f4eadc;
+      --accent: #0c7c68;
+      --accent-2: #b7592c;
+      --accent-3: #315b99;
+      --accent-4: #84549a;
+      --code-bg: #111815;
+      --code-ink: #e8f1ec;
+      --shadow: 0 20px 60px rgba(32, 40, 35, 0.10);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(12, 124, 104, 0.28);
+    }
+
+    a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .hero {
+      background:
+        linear-gradient(120deg, rgba(12, 124, 104, 0.14), rgba(183, 89, 44, 0.10) 45%, rgba(49, 91, 153, 0.12)),
+        #fbfcf8;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner,
+    main,
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      padding: 56px 0 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.18;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 82px);
+      max-width: 880px;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      margin-bottom: 18px;
+      padding-top: 18px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin: 34px 0 12px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin: 24px 0 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .subtitle {
+      color: #35423c;
+      font-size: 20px;
+      margin: 22px 0 28px;
+      max-width: 780px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 11px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(23, 33, 29, 0.12);
+      border-radius: 999px;
+      color: #31413a;
+      font-size: 13px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(23, 33, 29, 0.14);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .hero-panel svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 42px;
+      padding: 36px 0 84px;
+      align-items: start;
+      min-width: 0;
+    }
+
+    article {
+      min-width: 0;
+    }
+
+    aside {
+      position: sticky;
+      top: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 10px 28px rgba(23, 33, 29, 0.06);
+    }
+
+    aside strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    aside a {
+      display: block;
+      padding: 7px 0;
+      border-bottom: 0;
+      color: #31413a;
+      font-size: 14px;
+    }
+
+    aside a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 36px rgba(23, 33, 29, 0.05);
+      min-width: 0;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: #35423c;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: #fbfcf8;
+    }
+
+    .box h4 {
+      margin-top: 0;
+    }
+
+    .box.accent {
+      border-color: rgba(12, 124, 104, 0.28);
+      background: rgba(12, 124, 104, 0.07);
+    }
+
+    .box.warn {
+      border-color: rgba(183, 89, 44, 0.30);
+      background: rgba(183, 89, 44, 0.07);
+    }
+
+    .box.blue {
+      border-color: rgba(49, 91, 153, 0.28);
+      background: rgba(49, 91, 153, 0.07);
+    }
+
+    .box.purple {
+      border-color: rgba(132, 84, 154, 0.28);
+      background: rgba(132, 84, 154, 0.07);
+    }
+
+    .module {
+      border-top: 6px solid var(--accent);
+    }
+
+    .module:nth-of-type(3n) {
+      border-top-color: var(--accent-2);
+    }
+
+    .module:nth-of-type(3n + 1) {
+      border-top-color: var(--accent-3);
+    }
+
+    .module:nth-of-type(3n + 2) {
+      border-top-color: var(--accent-4);
+    }
+
+    .module-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .time {
+      flex: 0 0 auto;
+      min-width: 124px;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      background: var(--soft);
+      border: 1px solid var(--line);
+      font-weight: 750;
+      color: #31413a;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f0f3ec;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      color: #405049;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    ul,
+    ol {
+      margin-top: 8px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .checklist li::marker {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .phase {
+      display: grid;
+      grid-template-columns: 124px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcf8;
+    }
+
+    .phase .week {
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #eef2ea;
+      font-size: 13px;
+      color: #3d4b45;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.92em;
+      background: #eef2ea;
+      border: 1px solid #d8ddd4;
+      border-radius: 5px;
+      padding: 1px 5px;
+    }
+
+    pre {
+      margin: 16px 0;
+      padding: 18px;
+      overflow: auto;
+      border-radius: var(--radius);
+      background: var(--code-bg);
+      color: var(--code-ink);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      line-height: 1.56;
+    }
+
+    pre code {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      color: inherit;
+      font-size: 13px;
+    }
+
+    figure {
+      margin: 22px 0;
+      padding: 16px;
+      background: #fbfcf8;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    figure svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .resource-list {
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .resource-list li {
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: rgba(12, 124, 104, 0.08);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #31413a;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: #eef2ea;
+    }
+
+    .footer-inner {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+      }
+
+      .grid-3,
+      .grid-4,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .module-head {
+        display: block;
+      }
+
+      .time {
+        display: inline-flex;
+        margin-top: 12px;
+      }
+
+      .resource-list {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-inner,
+      main,
+      .footer-inner {
+        width: min(100% - 24px, var(--max));
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .phase {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Agent 算法工程师技能图谱与学习计划</h1>
+        <p class="subtitle">面向 2026 年主流 AI Agent 技术栈：从 LLM 原理、工具调用、RAG、规划与记忆，到评估、安全、可观测和生产部署。目标不是只会调用框架，而是能解释原理、实现核心循环、构建可靠系统。</p>
+        <div class="meta-row">
+          <span class="tag">调研日期：2026-07-05</span>
+          <span class="tag">建议周期：28 到 36 周</span>
+          <span class="tag">适合：Python/ML/后端基础学习者</span>
+          <span class="tag">交付：路线图 + 项目集 + 代码解释</span>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Agent learning map illustration">
+        <svg viewBox="0 0 760 560" role="img" aria-labelledby="hero-title hero-desc">
+          <title id="hero-title">Agent 工程能力地图</title>
+          <desc id="hero-desc">从模型、工具、知识、状态、评估到生产系统的能力关系图</desc>
+          <defs>
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#17211d" flood-opacity="0.16"/>
+            </filter>
+            <linearGradient id="coreGrad" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#0c7c68"/>
+              <stop offset="1" stop-color="#315b99"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="18" width="724" height="524" rx="8" fill="#f8faf5" stroke="#d8ddd4"/>
+          <g filter="url(#softShadow)">
+            <circle cx="380" cy="280" r="96" fill="url(#coreGrad)"/>
+            <text x="380" y="266" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="800">Agent</text>
+            <text x="380" y="300" text-anchor="middle" fill="#e9fff7" font-size="18">Reason + Act + Learn</text>
+          </g>
+          <g font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">
+            <g>
+              <rect x="88" y="58" width="184" height="72" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+              <text x="180" y="88" fill="#17211d">LLM 原理</text>
+              <text x="180" y="112" fill="#5e6a64" font-size="13">Transformer / 推理 / SFT</text>
+            </g>
+            <g>
+              <rect x="488" y="58" width="184" height="72" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+              <text x="580" y="88" fill="#17211d">工具调用</text>
+              <text x="580" y="112" fill="#5e6a64" font-size="13">Function / MCP / 沙箱</text>
+            </g>
+            <g>
+              <rect x="62" y="238" width="188" height="76" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+              <text x="156" y="270" fill="#17211d">知识系统</text>
+              <text x="156" y="294" fill="#5e6a64" font-size="13">RAG / Graph / Memory</text>
+            </g>
+            <g>
+              <rect x="510" y="238" width="188" height="76" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+              <text x="604" y="270" fill="#17211d">规划控制</text>
+              <text x="604" y="294" fill="#5e6a64" font-size="13">ReAct / Graph / Workflow</text>
+            </g>
+            <g>
+              <rect x="88" y="422" width="184" height="72" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+              <text x="180" y="452" fill="#17211d">评估观测</text>
+              <text x="180" y="476" fill="#5e6a64" font-size="13">Evals / Traces / Cost</text>
+            </g>
+            <g>
+              <rect x="488" y="422" width="184" height="72" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+              <text x="580" y="452" fill="#17211d">安全生产</text>
+              <text x="580" y="476" fill="#5e6a64" font-size="13">Guardrails / Deploy / Ops</text>
+            </g>
+          </g>
+          <g stroke="#91a09a" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M260 125 C300 154 326 182 348 212"/>
+            <path d="M500 125 C460 154 434 182 412 212"/>
+            <path d="M250 276 C286 276 302 276 321 276"/>
+            <path d="M510 276 C474 276 458 276 439 276"/>
+            <path d="M260 435 C300 406 326 378 348 348"/>
+            <path d="M500 435 C460 406 434 378 412 348"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <strong>目录</strong>
+      <a href="#positioning">1. 角色定位</a>
+      <a href="#map">2. 能力地图</a>
+      <a href="#roadmap">3. 总体学习路线</a>
+      <a href="#modules">4. 模块详解</a>
+      <a href="#code">5. 核心代码实现</a>
+      <a href="#projects">6. 项目作品集</a>
+      <a href="#interview">7. 面试与产出标准</a>
+      <a href="#resources">8. 资料链接</a>
+      <a href="#checklist">9. 最终检查清单</a>
+    </aside>
+
+    <article>
+      <section id="positioning">
+        <h2>1. 角色定位：Agent 算法工程师到底做什么</h2>
+        <p class="lead">Agent 算法工程师不是“会把 LangChain 接起来”的工程师，而是能把大模型变成可控、可评估、可恢复、可上线的决策系统的人。</p>
+        <div class="grid-3">
+          <div class="box accent">
+            <h4>算法侧</h4>
+            <p>理解 Transformer、推理采样、上下文窗口、embedding、rerank、规划搜索、强化学习、评估指标。能判断问题来自模型能力、提示设计、检索质量、工具接口还是状态机设计。</p>
+          </div>
+          <div class="box blue">
+            <h4>系统侧</h4>
+            <p>把 agent 拆成模型调用、工具执行、记忆、状态、权限、观测、队列、缓存、重试、人工审核等模块。能处理延迟、成本、并发、失败恢复和数据一致性。</p>
+          </div>
+          <div class="box warn">
+            <h4>产品侧</h4>
+            <p>为真实任务设计边界：什么时候自动做，什么时候问人，什么时候停止。能把成功率、完成时间、人工接管率、误操作率转化为可监控指标。</p>
+          </div>
+        </div>
+
+        <h3>你需要形成的核心判断</h3>
+        <ul class="checklist">
+          <li><strong>什么时候用 workflow，什么时候用 agent：</strong>如果路径固定，优先 workflow；如果需要动态决定下一步、使用工具、处理开放环境，才引入 agent。</li>
+          <li><strong>模型不是控制系统：</strong>LLM 负责语义判断和候选行动，代码负责权限、状态转换、校验、超时、幂等和回滚。</li>
+          <li><strong>可观测比“聪明”更重要：</strong>没有 trace、eval、日志和回放，就无法判断优化是否真实有效。</li>
+          <li><strong>安全是架构问题：</strong>prompt injection、工具越权、数据泄露、供应链工具风险，需要通过权限、隔离、策略、审计和用户确认一起解决。</li>
+        </ul>
+      </section>
+
+      <section id="map">
+        <h2>2. 主流 Agent 能力地图</h2>
+        <p>当前主流 agent 技术栈大致可以分为七层。学习时不要按框架名字死记，而要按系统层次理解：每一层解决什么问题、输入输出是什么、失败模式是什么。</p>
+        <figure>
+          <svg viewBox="0 0 980 620" role="img" aria-labelledby="stack-title">
+            <title id="stack-title">Agent 技术栈分层图</title>
+            <rect x="20" y="20" width="940" height="580" rx="8" fill="#fbfcf8" stroke="#d8ddd4"/>
+            <g font-family="Inter, sans-serif">
+              <g>
+                <rect x="70" y="62" width="840" height="58" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                <text x="96" y="98" font-size="20" font-weight="800" fill="#0c4d42">用户目标层</text>
+                <text x="254" y="98" font-size="16" fill="#405049">任务定义、约束、成功标准、人类确认点</text>
+              </g>
+              <g>
+                <rect x="70" y="136" width="840" height="58" rx="8" fill="#edf1fb" stroke="#c5d0e8"/>
+                <text x="96" y="172" font-size="20" font-weight="800" fill="#315b99">控制层</text>
+                <text x="254" y="172" font-size="16" fill="#405049">Workflow、State Graph、Planner、Router、Handoff</text>
+              </g>
+              <g>
+                <rect x="70" y="210" width="840" height="58" rx="8" fill="#f4edf7" stroke="#d9c3e5"/>
+                <text x="96" y="246" font-size="20" font-weight="800" fill="#84549a">模型层</text>
+                <text x="254" y="246" font-size="16" fill="#405049">LLM、多模态模型、结构化输出、工具调用、采样策略</text>
+              </g>
+              <g>
+                <rect x="70" y="284" width="840" height="58" rx="8" fill="#fbefe7" stroke="#edccb9"/>
+                <text x="96" y="320" font-size="20" font-weight="800" fill="#b7592c">行动层</text>
+                <text x="254" y="320" font-size="16" fill="#405049">Function Calling、MCP、浏览器、数据库、代码执行、第三方 API</text>
+              </g>
+              <g>
+                <rect x="70" y="358" width="840" height="58" rx="8" fill="#f1f4e7" stroke="#d8dfbb"/>
+                <text x="96" y="394" font-size="20" font-weight="800" fill="#657c21">知识层</text>
+                <text x="254" y="394" font-size="16" fill="#405049">RAG、向量库、关键词检索、知识图谱、记忆、上下文压缩</text>
+              </g>
+              <g>
+                <rect x="70" y="432" width="840" height="58" rx="8" fill="#eef2ea" stroke="#ccd4ca"/>
+                <text x="96" y="468" font-size="20" font-weight="800" fill="#3d4b45">评估层</text>
+                <text x="254" y="468" font-size="16" fill="#405049">离线任务集、在线 A/B、trace、回放、成本、延迟、成功率</text>
+              </g>
+              <g>
+                <rect x="70" y="506" width="840" height="58" rx="8" fill="#fff8df" stroke="#e3d49a"/>
+                <text x="96" y="542" font-size="20" font-weight="800" fill="#806817">安全层</text>
+                <text x="254" y="542" font-size="16" fill="#405049">权限、沙箱、审计、guardrails、数据分级、人工审批、故障恢复</text>
+              </g>
+            </g>
+          </svg>
+          <figcaption>学习顺序建议：先理解模型和工具调用，再做 RAG 和控制流，最后补齐评估、安全与生产化。</figcaption>
+        </figure>
+      </section>
+
+      <section id="roadmap">
+        <h2>3. 总体学习路线：28 到 36 周</h2>
+        <p>下面的路线假设你每周投入 12 到 18 小时。如果你已有深度学习和后端经验，可以压缩到 20 到 24 周；如果基础薄弱，建议拉长到 40 周，尤其不要跳过评估与安全。</p>
+        <div class="timeline">
+          <div class="phase">
+            <div class="week">第 1-4 周</div>
+            <div><strong>基础能力补齐：</strong>Python 工程、API 服务、异步任务、Transformer/embedding 基础、LLM 推理参数。产出一个最小聊天服务和一个 embedding 检索 demo。</div>
+          </div>
+          <div class="phase">
+            <div class="week">第 5-8 周</div>
+            <div><strong>提示、结构化输出与工具调用：</strong>掌握 system/developer/user message、JSON schema、function calling、错误重试、工具接口设计。产出一个能查天气、读文件、调用搜索 API 的基础 agent。</div>
+          </div>
+          <div class="phase">
+            <div class="week">第 9-13 周</div>
+            <div><strong>RAG 与知识系统：</strong>学习 chunking、hybrid search、rerank、query rewrite、citation、context packing、GraphRAG。产出一个可追溯引用的文档问答系统。</div>
+          </div>
+          <div class="phase">
+            <div class="week">第 14-18 周</div>
+            <div><strong>Agent 控制与规划：</strong>实现 ReAct、plan-and-execute、state graph、human-in-the-loop、reflection。用 LangGraph 或 OpenAI Agents SDK 做一个多步骤任务助手。</div>
+          </div>
+          <div class="phase">
+            <div class="week">第 19-23 周</div>
+            <div><strong>评估、观测与安全：</strong>建立任务集、自动评分、trace、错误归因、prompt injection 防护、工具权限和审计。产出 eval dashboard 和安全测试集。</div>
+          </div>
+          <div class="phase">
+            <div class="week">第 24-30 周</div>
+            <div><strong>生产化与优化：</strong>缓存、批处理、队列、限流、成本控制、模型路由、失败恢复、部署监控。把前面的 agent 包装成可部署服务。</div>
+          </div>
+          <div class="phase">
+            <div class="week">第 31-36 周</div>
+            <div><strong>作品集和专项突破：</strong>选择代码 agent、数据分析 agent、企业知识库 agent、浏览器操作 agent 或多 agent 研究助手之一，完成可演示项目、技术文档和评估报告。</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="modules">
+        <h2>4. 模块详解：每部分学什么、怎么练、多久</h2>
+
+        <div class="module" id="m0">
+          <div class="module-head">
+            <div>
+              <h3>模块 0：Python、后端与工程基础</h3>
+              <p>Agent 工程最终要落到可运行系统，因此 Python 基础、API 服务、异步 IO、数据库和测试是底座。</p>
+            </div>
+            <div class="time">3 到 4 周</div>
+          </div>
+          <div class="grid-2">
+            <div class="box">
+              <h4>技术原理</h4>
+              <ul>
+                <li>HTTP 请求、鉴权、超时、重试、幂等、分页和速率限制。</li>
+                <li>同步、异步、队列和后台任务的差异。</li>
+                <li>SQLite/Postgres 的基本建模，日志与配置管理。</li>
+                <li>单元测试、集成测试、mock 外部 API。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>用 FastAPI 写一个 `/chat` 接口，支持请求日志和错误码。</li>
+                <li>实现一个 tool registry，把 Python 函数注册为可调用工具。</li>
+                <li>用 pytest 给工具函数、API handler 和异常分支写测试。</li>
+                <li>用 SQLite 保存会话、消息、工具调用结果和 trace id。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能解释一次用户请求如何从 HTTP 进入服务、调用模型、触发工具、写入日志、返回结果；服务异常时不会直接崩溃。</p>
+          <div class="pill-list">
+            <span class="pill">Python 3.11+</span><span class="pill">FastAPI</span><span class="pill">pytest</span><span class="pill">Postgres/SQLite</span>
+          </div>
+        </div>
+
+        <div class="module" id="m1">
+          <div class="module-head">
+            <div>
+              <h3>模块 1：LLM 与 Transformer 原理</h3>
+              <p>Agent 的“脑”是大模型。你不一定要从零训练千亿模型，但必须理解模型为什么会犯错，以及推理参数怎样改变行为。</p>
+            </div>
+            <div class="time">4 到 5 周</div>
+          </div>
+          <div class="grid-3">
+            <div class="box">
+              <h4>必学概念</h4>
+              <ul>
+                <li>tokenization、embedding、attention、position encoding、KV cache。</li>
+                <li>预训练、SFT、RLHF/DPO、指令遵循、对齐。</li>
+                <li>temperature、top_p、max_tokens、stop、seed、logprobs。</li>
+                <li>幻觉、上下文遗忘、长上下文退化和工具选择错误。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>技术原理</h4>
+              <p>Transformer 用 self-attention 计算 token 之间的相关性。推理时模型不是“查数据库”，而是根据上下文分布生成下一个 token。Agent 可靠性不能只靠提示词，需要外部工具、检索、校验和状态机共同约束。</p>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>手写一个简化 attention 计算，理解 Q/K/V。</li>
+                <li>比较不同 temperature 对工具选择和答案稳定性的影响。</li>
+                <li>测量长提示下关键信息放在开头、中间、结尾的命中率。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能解释为什么 LLM 需要 tool calling 才能安全执行外部动作，也能解释为什么 RAG 不是简单“把文档塞进 prompt”。</p>
+        </div>
+
+        <div class="module" id="m2">
+          <div class="module-head">
+            <div>
+              <h3>模块 2：Prompt、上下文工程与结构化输出</h3>
+              <p>Prompt engineering 已经升级为 context engineering：重点是把任务、工具、状态、示例、检索片段和输出约束组织成稳定上下文。</p>
+            </div>
+            <div class="time">2 到 3 周</div>
+          </div>
+          <div class="grid-2">
+            <div class="box">
+              <h4>技术原理</h4>
+              <ul>
+                <li>指令分层：system/developer/user/tool 消息各自承担不同约束。</li>
+                <li>结构化输出：JSON schema、枚举值、必填字段、类型校验。</li>
+                <li>少样本示例：示例能显著影响格式、风格和决策边界。</li>
+                <li>上下文打包：把最相关、最新、权限允许的信息放入上下文。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>为同一任务写普通 prompt、few-shot prompt、JSON schema prompt，并比较失败率。</li>
+                <li>写一个输出解析器：校验 JSON，失败时把错误反馈给模型重试。</li>
+                <li>实现 context packer：按 token 预算选择系统指令、历史摘要、检索片段和工具结果。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能把一个自然语言需求转成稳定的输入协议和输出协议，而不是靠“请你严格遵守格式”。</p>
+        </div>
+
+        <div class="module" id="m3">
+          <div class="module-head">
+            <div>
+              <h3>模块 3：工具调用、MCP 与 Agent-Computer Interface</h3>
+              <p>工具是 agent 影响世界的手。工具设计越清晰，agent 越稳定；工具权限越模糊，系统越危险。</p>
+            </div>
+            <div class="time">3 到 4 周</div>
+          </div>
+          <figure>
+            <svg viewBox="0 0 980 360" role="img" aria-labelledby="tool-title">
+              <title id="tool-title">工具调用闭环</title>
+              <rect x="20" y="20" width="940" height="320" rx="8" fill="#fbfcf8" stroke="#d8ddd4"/>
+              <g font-family="Inter, sans-serif" text-anchor="middle">
+                <g>
+                  <rect x="62" y="126" width="150" height="90" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                  <text x="137" y="162" font-size="18" font-weight="800" fill="#0c4d42">用户目标</text>
+                  <text x="137" y="190" font-size="13" fill="#405049">需求 + 约束</text>
+                </g>
+                <g>
+                  <rect x="266" y="80" width="172" height="182" rx="8" fill="#edf1fb" stroke="#c5d0e8"/>
+                  <text x="352" y="120" font-size="18" font-weight="800" fill="#315b99">LLM 决策</text>
+                  <text x="352" y="150" font-size="13" fill="#405049">选择工具</text>
+                  <text x="352" y="176" font-size="13" fill="#405049">生成参数</text>
+                  <text x="352" y="202" font-size="13" fill="#405049">解释结果</text>
+                </g>
+                <g>
+                  <rect x="492" y="76" width="176" height="190" rx="8" fill="#fbefe7" stroke="#edccb9"/>
+                  <text x="580" y="116" font-size="18" font-weight="800" fill="#b7592c">工具网关</text>
+                  <text x="580" y="146" font-size="13" fill="#405049">schema 校验</text>
+                  <text x="580" y="172" font-size="13" fill="#405049">权限检查</text>
+                  <text x="580" y="198" font-size="13" fill="#405049">超时/重试/审计</text>
+                </g>
+                <g>
+                  <rect x="722" y="126" width="180" height="90" rx="8" fill="#f4edf7" stroke="#d9c3e5"/>
+                  <text x="812" y="162" font-size="18" font-weight="800" fill="#84549a">外部系统</text>
+                  <text x="812" y="190" font-size="13" fill="#405049">API / DB / 浏览器 / 代码</text>
+                </g>
+              </g>
+              <g stroke="#91a09a" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow)">
+                <defs>
+                  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L8,3 z" fill="#91a09a"/>
+                  </marker>
+                </defs>
+                <path d="M212 171 H262"/>
+                <path d="M438 171 H488"/>
+                <path d="M668 171 H718"/>
+                <path d="M812 220 C735 305 433 320 350 262"/>
+              </g>
+            </svg>
+            <figcaption>工具调用必须经过网关。不要让模型直接拼 SQL、直接发支付请求或直接执行 shell。</figcaption>
+          </figure>
+          <div class="grid-2">
+            <div class="box">
+              <h4>必学概念</h4>
+              <ul>
+                <li>OpenAI/Anthropic 等模型的 function/tool calling 机制。</li>
+                <li>MCP 的 tools、resources、prompts、servers、clients。</li>
+                <li>Agent-Computer Interface：给 agent 暴露怎样的操作界面最可靠。</li>
+                <li>工具参数 schema、幂等 key、dry-run、confirmation、audit log。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>把搜索、文件读取、日历查询封装成三个工具。</li>
+                <li>实现统一工具执行器：校验参数、执行、捕获异常、返回结构化结果。</li>
+                <li>给高风险工具加 human approval，例如发送邮件、删除数据、下单。</li>
+                <li>写一个最小 MCP server，让 agent 通过统一协议读取资源或调用函数。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能独立设计一个工具 API，让模型“容易选对、难以误用、出错可恢复、执行可追溯”。</p>
+        </div>
+
+        <div class="module" id="m4">
+          <div class="module-head">
+            <div>
+              <h3>模块 4：RAG、检索与知识系统</h3>
+              <p>Agent 需要可靠知识。RAG 的核心不是向量库，而是“把正确证据以正确形式放进上下文，并让答案可验证”。</p>
+            </div>
+            <div class="time">4 到 5 周</div>
+          </div>
+          <figure>
+            <svg viewBox="0 0 980 420" role="img" aria-labelledby="rag-title">
+              <title id="rag-title">RAG 流程图</title>
+              <rect x="20" y="20" width="940" height="380" rx="8" fill="#fbfcf8" stroke="#d8ddd4"/>
+              <g font-family="Inter, sans-serif" text-anchor="middle">
+                <rect x="56" y="80" width="140" height="74" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                <text x="126" y="112" font-size="17" font-weight="800" fill="#17211d">文档解析</text>
+                <text x="126" y="136" font-size="13" fill="#5e6a64">PDF / HTML / 表格</text>
+                <rect x="236" y="80" width="140" height="74" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                <text x="306" y="112" font-size="17" font-weight="800" fill="#17211d">切分清洗</text>
+                <text x="306" y="136" font-size="13" fill="#5e6a64">chunk + metadata</text>
+                <rect x="416" y="80" width="140" height="74" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                <text x="486" y="112" font-size="17" font-weight="800" fill="#17211d">索引</text>
+                <text x="486" y="136" font-size="13" fill="#5e6a64">BM25 + Vector</text>
+                <rect x="596" y="80" width="140" height="74" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                <text x="666" y="112" font-size="17" font-weight="800" fill="#17211d">召回重排</text>
+                <text x="666" y="136" font-size="13" fill="#5e6a64">rerank + filter</text>
+                <rect x="776" y="80" width="140" height="74" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                <text x="846" y="112" font-size="17" font-weight="800" fill="#17211d">生成引用</text>
+                <text x="846" y="136" font-size="13" fill="#5e6a64">answer + citations</text>
+                <rect x="236" y="254" width="508" height="86" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                <text x="490" y="292" font-size="20" font-weight="800" fill="#0c4d42">质量闭环</text>
+                <text x="490" y="320" font-size="14" fill="#405049">query rewrite、上下文压缩、证据覆盖率、faithfulness、人工反馈</text>
+              </g>
+              <g stroke="#91a09a" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow2)">
+                <defs>
+                  <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L8,3 z" fill="#91a09a"/>
+                  </marker>
+                </defs>
+                <path d="M196 117 H232"/>
+                <path d="M376 117 H412"/>
+                <path d="M556 117 H592"/>
+                <path d="M736 117 H772"/>
+                <path d="M846 158 C826 228 720 262 745 296"/>
+                <path d="M236 296 C154 270 116 214 126 158"/>
+              </g>
+            </svg>
+            <figcaption>RAG 是一个闭环系统。只做 embedding search 通常不够，需要解析、元数据、混合检索、重排、引用和评估。</figcaption>
+          </figure>
+          <div class="grid-3">
+            <div class="box">
+              <h4>必学概念</h4>
+              <ul>
+                <li>chunk size、overlap、semantic chunking、metadata filter。</li>
+                <li>dense retrieval、sparse retrieval、hybrid search、reranker。</li>
+                <li>query rewrite、multi-query、HyDE、contextual compression。</li>
+                <li>citation、faithfulness、answer relevancy、context precision/recall。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>对 PDF/Markdown/网页建立索引，保留标题、页码、URL、时间戳。</li>
+                <li>实现 BM25 + embedding 混合召回，再用 reranker 重排。</li>
+                <li>实现答案引用，每句话尽量能追溯到证据片段。</li>
+                <li>用 RAGAS 或自建 eval 集评估检索和生成质量。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>常见坑</h4>
+              <ul>
+                <li>chunk 过大导致噪声多，过小导致语义断裂。</li>
+                <li>只看生成答案，不看召回证据是否包含正确答案。</li>
+                <li>没有权限过滤，把不该看的文档放入上下文。</li>
+                <li>引用只装饰答案，不能真实定位证据。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>给一个企业文档库，你能做出带引用、可评估、可解释失败原因的问答系统。</p>
+        </div>
+
+        <div class="module" id="m5">
+          <div class="module-head">
+            <div>
+              <h3>模块 5：规划、推理与 Agent 控制流</h3>
+              <p>Agent 的难点不在“调用一次模型”，而在多步骤任务中如何决定下一步、何时停止、何时回滚、何时让人接管。</p>
+            </div>
+            <div class="time">4 到 5 周</div>
+          </div>
+          <figure>
+            <svg viewBox="0 0 980 460" role="img" aria-labelledby="control-title">
+              <title id="control-title">Agent 控制模式比较</title>
+              <rect x="20" y="20" width="940" height="420" rx="8" fill="#fbfcf8" stroke="#d8ddd4"/>
+              <g font-family="Inter, sans-serif">
+                <text x="82" y="74" font-size="22" font-weight="800" fill="#17211d">Workflow</text>
+                <text x="390" y="74" font-size="22" font-weight="800" fill="#17211d">ReAct Loop</text>
+                <text x="700" y="74" font-size="22" font-weight="800" fill="#17211d">State Graph</text>
+                <g text-anchor="middle" font-size="14">
+                  <rect x="70" y="120" width="120" height="52" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                  <text x="130" y="152">步骤 A</text>
+                  <rect x="70" y="206" width="120" height="52" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                  <text x="130" y="238">步骤 B</text>
+                  <rect x="70" y="292" width="120" height="52" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                  <text x="130" y="324">步骤 C</text>
+                  <rect x="352" y="110" width="150" height="52" rx="8" fill="#edf1fb" stroke="#c5d0e8"/>
+                  <text x="427" y="142">Thought</text>
+                  <rect x="352" y="196" width="150" height="52" rx="8" fill="#fbefe7" stroke="#edccb9"/>
+                  <text x="427" y="228">Action</text>
+                  <rect x="352" y="282" width="150" height="52" rx="8" fill="#f4edf7" stroke="#d9c3e5"/>
+                  <text x="427" y="314">Observation</text>
+                  <rect x="666" y="100" width="132" height="52" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                  <text x="732" y="132">Plan</text>
+                  <rect x="584" y="220" width="132" height="52" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                  <text x="650" y="252">Search</text>
+                  <rect x="748" y="220" width="132" height="52" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                  <text x="814" y="252">Act</text>
+                  <rect x="666" y="340" width="132" height="52" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                  <text x="732" y="372">Review</text>
+                </g>
+              </g>
+              <g stroke="#91a09a" stroke-width="3" fill="none" stroke-linecap="round" marker-end="url(#arrow3)">
+                <defs>
+                  <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L8,3 z" fill="#91a09a"/>
+                  </marker>
+                </defs>
+                <path d="M130 172 V202"/>
+                <path d="M130 258 V288"/>
+                <path d="M427 162 V192"/>
+                <path d="M427 248 V278"/>
+                <path d="M352 308 C284 280 284 156 348 136"/>
+                <path d="M732 152 V196 C732 210 700 218 716 236"/>
+                <path d="M732 152 V196 C732 210 770 218 748 236"/>
+                <path d="M650 272 C650 304 684 320 706 340"/>
+                <path d="M814 272 C814 304 780 320 758 340"/>
+                <path d="M732 340 V290 C732 278 734 268 748 250"/>
+              </g>
+            </svg>
+            <figcaption>固定流程优先 workflow，开放决策才用 ReAct 或 graph。长期任务通常需要 state graph，因为它能保存状态、恢复执行、插入人工审批。</figcaption>
+          </figure>
+          <div class="grid-2">
+            <div class="box">
+              <h4>必学模式</h4>
+              <ul>
+                <li>ReAct：交替生成推理、行动和观察。</li>
+                <li>Plan-and-execute：先分解计划，再逐步执行。</li>
+                <li>Router：根据任务类型选择专家、工具或子流程。</li>
+                <li>Reflection/Critic：执行后自检、修正或重试。</li>
+                <li>Human-in-the-loop：在高风险、低置信或失败时请求人类决策。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>手写一个 ReAct loop，限制最大步数和工具白名单。</li>
+                <li>用 LangGraph 实现一个含 Plan、Search、Write、Review 节点的状态图。</li>
+                <li>加入 failure policy：工具超时、结果为空、模型输出非法时如何恢复。</li>
+                <li>实现 checkpoint：任意节点失败后可以从上一个状态继续。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能为复杂任务选择合适控制模式，并解释为什么不是所有事情都应该交给一个自由循环的 agent。</p>
+        </div>
+
+        <div class="module" id="m6">
+          <div class="module-head">
+            <div>
+              <h3>模块 6：主流框架与生态</h3>
+              <p>框架会变，但框架背后的抽象相对稳定：agent、tool、state、memory、handoff、guardrail、trace、eval。</p>
+            </div>
+            <div class="time">3 到 4 周</div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>框架/协议</th>
+                  <th>重点学习</th>
+                  <th>适合场景</th>
+                  <th>你要掌握到什么程度</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>OpenAI Agents SDK</td>
+                  <td>Agents、tools、handoffs、guardrails、tracing、Responses API。</td>
+                  <td>快速构建 OpenAI 模型驱动的生产 agent。</td>
+                  <td>能写多 agent handoff，能打开 trace，能给工具加 schema 和 guardrail。</td>
+                </tr>
+                <tr>
+                  <td>LangGraph</td>
+                  <td>StateGraph、节点、边、checkpoint、interrupt、durable execution。</td>
+                  <td>长任务、状态复杂、需要恢复和人工介入的 agent。</td>
+                  <td>能把任务拆成状态图，而不是写一个巨大 while loop。</td>
+                </tr>
+                <tr>
+                  <td>LlamaIndex</td>
+                  <td>数据连接器、索引、query engine、agent workflow、RAG pipeline。</td>
+                  <td>知识库、文档问答、企业数据检索。</td>
+                  <td>能构建带引用和评估的知识型 agent。</td>
+                </tr>
+                <tr>
+                  <td>Microsoft Agent Framework / AutoGen</td>
+                  <td>企业集成、多 agent 协作、工作流、工具和编排。</td>
+                  <td>企业级协作 agent 和 Microsoft 生态集成。</td>
+                  <td>理解其多 agent 抽象，能对比 LangGraph 和 OpenAI SDK。</td>
+                </tr>
+                <tr>
+                  <td>Google ADK</td>
+                  <td>Agent、tool、session、evaluation、deployment。</td>
+                  <td>Google Cloud / Gemini 生态内的 agent 构建。</td>
+                  <td>能读懂样例并迁移通用架构思想。</td>
+                </tr>
+                <tr>
+                  <td>MCP</td>
+                  <td>标准化连接工具和数据源，server/client，tools/resources/prompts。</td>
+                  <td>把本地或企业系统安全暴露给 agent。</td>
+                  <td>能写一个简单 MCP server，并理解权限和安全边界。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>学习建议：</strong>不要同时深挖所有框架。主线推荐：OpenAI Agents SDK 学模型与工具接口，LangGraph 学状态控制，LlamaIndex 学知识系统，MCP 学工具标准化。其他框架理解思想和生态即可。</p>
+        </div>
+
+        <div class="module" id="m7">
+          <div class="module-head">
+            <div>
+              <h3>模块 7：记忆、状态与长上下文管理</h3>
+              <p>Agent 需要记住目标、历史、用户偏好、任务进度和外部世界状态。但“全部塞进上下文”既贵又不稳定。</p>
+            </div>
+            <div class="time">2 到 3 周</div>
+          </div>
+          <div class="grid-3">
+            <div class="box">
+              <h4>记忆类型</h4>
+              <ul>
+                <li>短期记忆：当前会话上下文和工具观察。</li>
+                <li>长期记忆：用户偏好、事实、历史任务摘要。</li>
+                <li>工作记忆：当前计划、待办、变量、约束。</li>
+                <li>情景记忆：过去案例和可复用解决方案。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现方式</h4>
+              <ul>
+                <li>message history + summary buffer。</li>
+                <li>结构化状态对象，例如 JSON/Pydantic。</li>
+                <li>向量记忆，用 embedding 召回相关历史。</li>
+                <li>事件日志，支持 replay 和 audit。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>风险控制</h4>
+              <ul>
+                <li>记忆写入要经过规则或模型判断，避免污染。</li>
+                <li>区分事实、偏好、推测和临时计划。</li>
+                <li>敏感信息需要过期、脱敏和权限检查。</li>
+                <li>记忆召回要带来源，避免“凭空记得”。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能设计一个 agent 状态 schema，让任务能恢复、能解释、能限制上下文长度。</p>
+        </div>
+
+        <div class="module" id="m8">
+          <div class="module-head">
+            <div>
+              <h3>模块 8：评估、可观测与实验体系</h3>
+              <p>Agent 的质量不能靠主观演示判断。你需要任务集、指标、trace、错误分类和回归测试。</p>
+            </div>
+            <div class="time">3 到 4 周</div>
+          </div>
+          <figure>
+            <svg viewBox="0 0 980 390" role="img" aria-labelledby="eval-title">
+              <title id="eval-title">Agent 评估矩阵</title>
+              <rect x="20" y="20" width="940" height="350" rx="8" fill="#fbfcf8" stroke="#d8ddd4"/>
+              <g font-family="Inter, sans-serif" font-size="15">
+                <text x="62" y="74" font-size="23" font-weight="800" fill="#17211d">评估不是一个分数，而是一组切片</text>
+                <g text-anchor="middle" font-weight="800">
+                  <rect x="76" y="116" width="180" height="80" rx="8" fill="#e9f3ee" stroke="#bdd7cf"/>
+                  <text x="166" y="150" fill="#0c4d42">任务成功率</text>
+                  <text x="166" y="176" fill="#405049" font-size="13">完成/部分/失败</text>
+                  <rect x="292" y="116" width="180" height="80" rx="8" fill="#edf1fb" stroke="#c5d0e8"/>
+                  <text x="382" y="150" fill="#315b99">工具正确率</text>
+                  <text x="382" y="176" fill="#405049" font-size="13">选对工具 + 参数正确</text>
+                  <rect x="508" y="116" width="180" height="80" rx="8" fill="#fbefe7" stroke="#edccb9"/>
+                  <text x="598" y="150" fill="#b7592c">知识忠实度</text>
+                  <text x="598" y="176" fill="#405049" font-size="13">有证据 + 不幻觉</text>
+                  <rect x="724" y="116" width="180" height="80" rx="8" fill="#f4edf7" stroke="#d9c3e5"/>
+                  <text x="814" y="150" fill="#84549a">安全合规</text>
+                  <text x="814" y="176" fill="#405049" font-size="13">不越权 + 不泄露</text>
+                  <rect x="184" y="240" width="260" height="80" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                  <text x="314" y="274" fill="#17211d">成本与延迟</text>
+                  <text x="314" y="300" fill="#405049" font-size="13">tokens / wall time / retries</text>
+                  <rect x="536" y="240" width="260" height="80" rx="8" fill="#ffffff" stroke="#ccd4ca"/>
+                  <text x="666" y="274" fill="#17211d">用户体验</text>
+                  <text x="666" y="300" fill="#405049" font-size="13">接管率 / 澄清率 / 满意度</text>
+                </g>
+              </g>
+            </svg>
+            <figcaption>一次 agent 失败通常同时涉及模型、检索、工具、状态和安全。trace 是定位失败的入口。</figcaption>
+          </figure>
+          <div class="grid-2">
+            <div class="box">
+              <h4>指标体系</h4>
+              <ul>
+                <li>Task success rate：最终任务是否完成。</li>
+                <li>Step accuracy：每一步计划和工具选择是否正确。</li>
+                <li>RAG 指标：context precision、context recall、faithfulness。</li>
+                <li>Operational：延迟、成本、重试次数、人工接管率。</li>
+                <li>Safety：越权调用、敏感信息泄露、prompt injection 成功率。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>实现训练</h4>
+              <ul>
+                <li>构建 50 到 100 条离线任务集，覆盖常规、边界、恶意输入。</li>
+                <li>保存每次运行的 prompt、模型输出、工具调用、观察和最终答案。</li>
+                <li>用 LLM-as-judge 做初筛，但关键任务必须有人类标注校准。</li>
+                <li>建立回归测试：改 prompt、换模型、换检索策略后自动比较指标。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能说清楚一次优化让哪个指标提升、是否牺牲了成本或安全，而不是只说“感觉更好了”。</p>
+        </div>
+
+        <div class="module" id="m9">
+          <div class="module-head">
+            <div>
+              <h3>模块 9：安全、权限与可靠性</h3>
+              <p>Agent 会读取数据、调用工具、写入系统，因此必须按“默认不信任模型输出”的原则设计。</p>
+            </div>
+            <div class="time">2 到 3 周</div>
+          </div>
+          <div class="grid-3">
+            <div class="box">
+              <h4>安全威胁</h4>
+              <ul>
+                <li>Prompt injection：文档或网页指示 agent 忽略规则。</li>
+                <li>Tool abuse：诱导 agent 调用危险工具或传入恶意参数。</li>
+                <li>Data exfiltration：把私有数据发送给外部工具或用户。</li>
+                <li>Indirect prompt injection：通过邮件、网页、PDF 等外部内容注入。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>防护原则</h4>
+              <ul>
+                <li>最小权限：工具只给完成任务所需权限。</li>
+                <li>高风险操作确认：发送、删除、支付、权限修改必须审批。</li>
+                <li>数据分级：不同来源和敏感级别进入不同上下文。</li>
+                <li>沙箱隔离：代码执行、浏览器操作和文件系统访问必须隔离。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>可靠性机制</h4>
+              <ul>
+                <li>最大步数、预算和超时。</li>
+                <li>工具返回结构化错误，让模型有机会恢复。</li>
+                <li>幂等请求和补偿动作，避免重复执行。</li>
+                <li>断点续跑、任务取消、人工接管和审计日志。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能为一个 agent 画出 threat model，并写出每个高风险工具的权限、确认和审计策略。</p>
+        </div>
+
+        <div class="module" id="m10">
+          <div class="module-head">
+            <div>
+              <h3>模块 10：生产化、MLOps 与成本优化</h3>
+              <p>上线后的 agent 面临真实流量、预算、模型波动、依赖服务故障和用户长尾需求。</p>
+            </div>
+            <div class="time">3 到 4 周</div>
+          </div>
+          <div class="grid-2">
+            <div class="box">
+              <h4>工程能力</h4>
+              <ul>
+                <li>模型路由：简单任务用小模型，复杂任务用强模型。</li>
+                <li>缓存：embedding cache、检索 cache、工具结果 cache、prompt cache。</li>
+                <li>队列：长任务异步执行，前端显示进度和可取消状态。</li>
+                <li>监控：tokens、延迟、错误率、重试、工具失败、用户接管。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>优化策略</h4>
+              <ul>
+                <li>减少不必要上下文，避免每步都塞完整历史。</li>
+                <li>把确定性逻辑放到代码里，不让模型做简单规则判断。</li>
+                <li>对工具结果做摘要，保留原始结果用于审计。</li>
+                <li>批量处理 embedding 和离线评估，避免在线阻塞。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能把 demo 变成一个有日志、监控、限流、权限、回归测试和部署说明的服务。</p>
+        </div>
+
+        <div class="module" id="m11">
+          <div class="module-head">
+            <div>
+              <h3>模块 11：多 Agent、代码 Agent 与前沿方向</h3>
+              <p>多 agent 不是越多越好。它适合职责清晰、信息隔离、需要并行或互评的任务。</p>
+            </div>
+            <div class="time">3 到 4 周</div>
+          </div>
+          <div class="grid-3">
+            <div class="box">
+              <h4>多 Agent</h4>
+              <ul>
+                <li>角色分工：planner、researcher、executor、critic。</li>
+                <li>通信协议：消息格式、共享状态、终止条件。</li>
+                <li>冲突处理：投票、仲裁、置信度、人工介入。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>代码 Agent</h4>
+              <ul>
+                <li>读仓库、定位文件、改代码、跑测试、解释 diff。</li>
+                <li>需要沙箱、版本控制、测试策略和回滚机制。</li>
+                <li>核心指标是通过测试、减少回归和最小修改范围。</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4>前沿方向</h4>
+              <ul>
+                <li>Computer use、browser agent、GUI grounding。</li>
+                <li>长期自主任务、异步 agent、个人记忆。</li>
+                <li>Agentic RAG、GraphRAG、tool learning、self-improvement。</li>
+              </ul>
+            </div>
+          </div>
+          <p><strong>验收标准：</strong>你能判断一个任务是否真的需要多 agent，并能证明多 agent 版本比单 agent 或 workflow 更好。</p>
+        </div>
+      </section>
+
+      <section id="code">
+        <h2>5. 核心代码实现与解释</h2>
+        <p>下面的代码是“理解原理”的最小实现，不追求覆盖某个 SDK 的全部特性。真正项目里建议使用成熟 SDK 或框架，但你需要理解这些框架在替你做什么。</p>
+
+        <h3>5.1 最小工具注册表</h3>
+        <pre><code class="language-python">from dataclasses import dataclass
+from typing import Any, Callable
+
+@dataclass
+class Tool:
+    name: str
+    description: str
+    schema: dict[str, Any]
+    fn: Callable[..., Any]
+    risk: str = "low"
+
+class ToolRegistry:
+    def __init__(self) -&gt; None:
+        self._tools: dict[str, Tool] = {}
+
+    def register(self, tool: Tool) -&gt; None:
+        if tool.name in self._tools:
+            raise ValueError(f"duplicate tool: {tool.name}")
+        self._tools[tool.name] = tool
+
+    def specs_for_model(self) -&gt; list[dict[str, Any]]:
+        return [
+            {
+                "name": tool.name,
+                "description": tool.description,
+                "parameters": tool.schema,
+            }
+            for tool in self._tools.values()
+        ]
+
+    def execute(self, name: str, arguments: dict[str, Any]) -&gt; dict[str, Any]:
+        if name not in self._tools:
+            return {"ok": False, "error": f"unknown tool: {name}"}
+
+        tool = self._tools[name]
+        try:
+            # 生产环境应在这里做 JSON schema 校验、权限检查、超时和审计。
+            result = tool.fn(**arguments)
+            return {"ok": True, "tool": name, "result": result}
+        except Exception as exc:
+            return {"ok": False, "tool": name, "error": str(exc)}
+</code></pre>
+        <div class="note">
+          <strong>代码解释：</strong>`Tool` 描述工具的名字、说明、参数 schema 和真实函数。`specs_for_model()` 把工具描述交给模型，让模型知道可以调用什么。`execute()` 是工具网关入口，生产环境必须加参数校验、权限判断、超时、重试和审计日志。
+        </div>
+
+        <h3>5.2 最小 Agent 循环</h3>
+        <pre><code class="language-python">MAX_STEPS = 8
+
+def run_agent(model, registry: ToolRegistry, user_goal: str) -&gt; str:
+    messages = [
+        {"role": "system", "content": "You are a careful task agent. Use tools only when needed."},
+        {"role": "user", "content": user_goal},
+    ]
+
+    for step in range(MAX_STEPS):
+        response = model.chat(
+            messages=messages,
+            tools=registry.specs_for_model(),
+        )
+
+        if response.final_answer:
+            return response.final_answer
+
+        if not response.tool_call:
+            messages.append({
+                "role": "user",
+                "content": "No valid final answer or tool call was produced. Decide the next safe step.",
+            })
+            continue
+
+        call = response.tool_call
+        tool_result = registry.execute(call.name, call.arguments)
+        messages.append({
+            "role": "assistant",
+            "content": response.reasoning_summary,
+            "tool_call": {"name": call.name, "arguments": call.arguments},
+        })
+        messages.append({
+            "role": "tool",
+            "name": call.name,
+            "content": tool_result,
+        })
+
+    return "任务未在步数预算内完成，需要人工接管。"
+</code></pre>
+        <div class="note">
+          <strong>代码解释：</strong>Agent loop 的本质是“模型决策，工具执行，观察结果，再决策”。`MAX_STEPS` 防止无限循环。工具结果要作为 tool message 放回上下文。真实系统里还要保存 trace、token 成本、每步状态和失败原因。
+        </div>
+
+        <h3>5.3 简化 RAG 检索与生成</h3>
+        <pre><code class="language-python">import numpy as np
+
+def cosine(a: np.ndarray, b: np.ndarray) -&gt; float:
+    return float(a @ b / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-9))
+
+class MiniRAG:
+    def __init__(self, embed_model, llm):
+        self.embed_model = embed_model
+        self.llm = llm
+        self.rows: list[dict] = []
+
+    def add_document(self, doc_id: str, chunks: list[str]) -&gt; None:
+        for i, text in enumerate(chunks):
+            vector = self.embed_model.embed(text)
+            self.rows.append({
+                "doc_id": doc_id,
+                "chunk_id": i,
+                "text": text,
+                "vector": vector,
+            })
+
+    def retrieve(self, query: str, k: int = 5) -&gt; list[dict]:
+        q = self.embed_model.embed(query)
+        scored = [
+            (cosine(q, row["vector"]), row)
+            for row in self.rows
+        ]
+        return [row for _, row in sorted(scored, reverse=True)[:k]]
+
+    def answer(self, query: str) -&gt; dict:
+        evidence = self.retrieve(query)
+        context = "\n\n".join(
+            f"[{row['doc_id']}#{row['chunk_id']}]\n{row['text']}"
+            for row in evidence
+        )
+        prompt = f"""
+        只根据证据回答问题。如果证据不足，回答“证据不足”。
+        回答中必须引用证据编号。
+
+        问题：{query}
+        证据：
+        {context}
+        """
+        return {
+            "answer": self.llm.generate(prompt),
+            "evidence": [
+                {"doc_id": row["doc_id"], "chunk_id": row["chunk_id"]}
+                for row in evidence
+            ],
+        }
+</code></pre>
+        <div class="note">
+          <strong>代码解释：</strong>这段代码展示 RAG 的最小闭环：文档切块、embedding、相似度召回、构造带证据编号的 prompt、生成带引用答案。生产环境要补 BM25、rerank、权限过滤、去重、上下文压缩、答案事实性评估。
+        </div>
+
+        <h3>5.4 状态图思维的伪代码</h3>
+        <pre><code class="language-python">class AgentState(dict):
+    """保存 goal、plan、evidence、draft、errors、approval 等字段。"""
+
+def plan_node(state: AgentState) -&gt; AgentState:
+    state["plan"] = make_plan(state["goal"])
+    return state
+
+def search_node(state: AgentState) -&gt; AgentState:
+    state["evidence"] = search_documents(state["plan"])
+    return state
+
+def write_node(state: AgentState) -&gt; AgentState:
+    state["draft"] = write_answer(state["goal"], state["evidence"])
+    return state
+
+def review_node(state: AgentState) -&gt; str:
+    report = evaluate_draft(state["draft"], state["evidence"])
+    state["review"] = report
+    if report["safe"] is False:
+        return "human_approval"
+    if report["score"] &lt; 0.75:
+        return "search"
+    return "finish"
+</code></pre>
+        <div class="note">
+          <strong>代码解释：</strong>状态图把 agent 拆成节点。每个节点只做一件事，读写同一个 `state`。`review_node` 返回下一条边：继续搜索、请求人工审批或完成。LangGraph 这类框架会在此基础上提供 checkpoint、恢复、interrupt 和 trace。
+        </div>
+
+        <h3>5.5 最小评估脚本</h3>
+        <pre><code class="language-python">def exact_or_judge_score(example: dict, prediction: dict, judge_llm) -&gt; dict:
+    if "expected_answer" in example:
+        exact = example["expected_answer"].strip() in prediction["answer"]
+    else:
+        exact = None
+
+    judge_prompt = f"""
+    请判断回答是否完成任务，返回 JSON：
+    {{
+      "success": true/false,
+      "reason": "...",
+      "safety_issue": true/false
+    }}
+
+    任务：{example["input"]}
+    回答：{prediction["answer"]}
+    证据：{prediction.get("evidence", [])}
+    """
+    judged = judge_llm.generate_json(judge_prompt)
+    return {
+        "id": example["id"],
+        "exact_match": exact,
+        "success": judged["success"],
+        "safety_issue": judged["safety_issue"],
+        "reason": judged["reason"],
+    }
+
+def run_eval(agent, dataset: list[dict], judge_llm) -&gt; list[dict]:
+    results = []
+    for example in dataset:
+        prediction = agent.run(example["input"])
+        results.append(exact_or_judge_score(example, prediction, judge_llm))
+    return results
+</code></pre>
+        <div class="note">
+          <strong>代码解释：</strong>评估脚本需要把输入、输出、证据、分数和原因保存下来。LLM-as-judge 可以提高效率，但不能完全替代人工标注。关键业务要抽样人工复核，并检查 judge 本身的偏差。
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>6. 推荐项目作品集</h2>
+        <p>学习 agent 最好用项目串起来。下面 6 个项目从基础到高级，每个都能在面试或作品集中展示。</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>项目</th>
+                <th>周期</th>
+                <th>核心能力</th>
+                <th>验收产物</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>工具调用助手</td>
+                <td>1 到 2 周</td>
+                <td>tool registry、schema、错误恢复、确认机制。</td>
+                <td>能调用 3 个工具，保存 trace，并给危险工具加确认。</td>
+              </tr>
+              <tr>
+                <td>带引用的 RAG 知识库</td>
+                <td>3 到 4 周</td>
+                <td>文档解析、chunking、hybrid retrieval、rerank、citation、RAG eval。</td>
+                <td>文档问答网页、引用定位、50 条评估集和指标报告。</td>
+              </tr>
+              <tr>
+                <td>研究报告 Agent</td>
+                <td>3 到 4 周</td>
+                <td>搜索、资料筛选、计划、写作、事实核查、引用。</td>
+                <td>输入主题后生成结构化报告，所有关键事实有来源。</td>
+              </tr>
+              <tr>
+                <td>数据分析 Agent</td>
+                <td>4 到 5 周</td>
+                <td>SQL/Python 工具、图表、代码执行沙箱、结果解释。</td>
+                <td>上传 CSV 后生成分析计划、执行代码、输出图表和结论。</td>
+              </tr>
+              <tr>
+                <td>代码修改 Agent</td>
+                <td>5 到 6 周</td>
+                <td>仓库检索、补丁生成、测试、diff 解释、回滚。</td>
+                <td>能修复小 bug，运行测试，输出变更说明和风险点。</td>
+              </tr>
+              <tr>
+                <td>企业流程 Agent</td>
+                <td>5 到 8 周</td>
+                <td>状态图、审批流、权限、审计、异步任务和部署。</td>
+                <td>例如报销、采购、客服工单或投标文档审查的端到端 demo。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="interview">
+        <h2>7. 面试与产出标准</h2>
+        <div class="grid-2">
+          <div class="box accent">
+            <h4>面试常考问题</h4>
+            <ul>
+              <li>ReAct、plan-and-execute、workflow、state graph 有什么区别？</li>
+              <li>如何设计一个可靠的 tool calling 接口？</li>
+              <li>RAG 为什么会失败？如何定位是召回问题还是生成问题？</li>
+              <li>如何评估 agent 质量？LLM-as-judge 有什么风险？</li>
+              <li>Prompt injection 如何防？间接 prompt injection 为什么更难？</li>
+              <li>如何降低 agent 的延迟和成本？</li>
+              <li>多 agent 什么时候比单 agent 更好？什么时候只是增加复杂度？</li>
+            </ul>
+          </div>
+          <div class="box blue">
+            <h4>作品集应该包含</h4>
+            <ul>
+              <li>架构图：模型、工具、检索、状态、评估、安全边界。</li>
+              <li>核心代码：agent loop、tool gateway、RAG pipeline、eval runner。</li>
+              <li>评估报告：数据集、指标、失败案例、优化前后对比。</li>
+              <li>安全说明：权限、确认、沙箱、敏感数据处理。</li>
+              <li>部署说明：环境变量、启动方式、日志和监控。</li>
+            </ul>
+          </div>
+        </div>
+        <h3>能力分级</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>级别</th>
+                <th>表现</th>
+                <th>缺口</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>初级</td>
+                <td>能用 SDK 接模型和工具，能做简单 RAG demo。</td>
+                <td>缺少评估、安全、状态恢复和生产经验。</td>
+              </tr>
+              <tr>
+                <td>中级</td>
+                <td>能独立实现工具网关、RAG 质量优化、trace 和离线 eval。</td>
+                <td>需要提升复杂任务分解、成本优化、多 agent 和安全建模。</td>
+              </tr>
+              <tr>
+                <td>高级</td>
+                <td>能为业务设计 agent 架构，定义指标，定位失败，带团队上线和迭代。</td>
+                <td>需要持续跟踪新模型、新协议、新威胁和真实用户反馈。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="resources">
+        <h2>8. 推荐资料链接</h2>
+        <p>下面链接优先选择官方文档、论文和安全标准。框架更新很快，学习时以官方文档为准。</p>
+        <ul class="resource-list">
+          <li><a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noreferrer">Anthropic: Building effective agents</a></li>
+          <li><a href="https://www.anthropic.com/engineering/writing-tools-for-agents" target="_blank" rel="noreferrer">Anthropic: Writing tools for agents</a></li>
+          <li><a href="https://openai.github.io/openai-agents-python/" target="_blank" rel="noreferrer">OpenAI Agents SDK 文档</a></li>
+          <li><a href="https://platform.openai.com/docs/guides/function-calling" target="_blank" rel="noreferrer">OpenAI Function Calling 指南</a></li>
+          <li><a href="https://platform.openai.com/docs/guides/tools" target="_blank" rel="noreferrer">OpenAI Tools 指南</a></li>
+          <li><a href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noreferrer">LangGraph 官方文档</a></li>
+          <li><a href="https://docs.llamaindex.ai/" target="_blank" rel="noreferrer">LlamaIndex 官方文档</a></li>
+          <li><a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank" rel="noreferrer">Model Context Protocol 官方文档</a></li>
+          <li><a href="https://microsoft.github.io/autogen/stable/" target="_blank" rel="noreferrer">Microsoft AutoGen 文档</a></li>
+          <li><a href="https://google.github.io/adk-docs/" target="_blank" rel="noreferrer">Google Agent Development Kit 文档</a></li>
+          <li><a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noreferrer">ReAct: Synergizing Reasoning and Acting</a></li>
+          <li><a href="https://arxiv.org/abs/2302.04761" target="_blank" rel="noreferrer">Toolformer: Language Models Can Teach Themselves to Use Tools</a></li>
+          <li><a href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noreferrer">Reflexion: Language Agents with Verbal Reinforcement Learning</a></li>
+          <li><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></li>
+          <li><a href="https://docs.ragas.io/" target="_blank" rel="noreferrer">RAGAS 文档</a></li>
+          <li><a href="https://docs.smith.langchain.com/" target="_blank" rel="noreferrer">LangSmith 文档</a></li>
+          <li><a href="https://opentelemetry.io/docs/specs/semconv/gen-ai/" target="_blank" rel="noreferrer">OpenTelemetry GenAI 语义约定</a></li>
+          <li><a href="https://github.com/OWASP/www-project-top-10-for-large-language-model-applications" target="_blank" rel="noreferrer">OWASP Top 10 for LLM Applications</a></li>
+          <li><a href="https://dspy.ai/" target="_blank" rel="noreferrer">DSPy 文档</a></li>
+          <li><a href="https://python.langchain.com/docs/concepts/agents/" target="_blank" rel="noreferrer">LangChain Agents 概念文档</a></li>
+        </ul>
+      </section>
+
+      <section id="checklist">
+        <h2>9. 最终检查清单</h2>
+        <div class="grid-2">
+          <div class="box">
+            <h4>技术原理必须能讲清</h4>
+            <ul>
+              <li>LLM 为什么需要外部工具和检索。</li>
+              <li>Function calling 的输入输出协议。</li>
+              <li>RAG 从解析到评估的完整链路。</li>
+              <li>Workflow、ReAct、StateGraph 的取舍。</li>
+              <li>Agent 评估指标和失败归因方法。</li>
+              <li>Prompt injection 与工具越权防护。</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>实现能力必须能落地</h4>
+            <ul>
+              <li>写一个可追踪的 agent loop。</li>
+              <li>设计一个带 schema、权限和审计的工具网关。</li>
+              <li>实现 hybrid RAG、rerank、citation 和 eval。</li>
+              <li>用 LangGraph 或同类框架实现可恢复状态图。</li>
+              <li>构建离线 eval 集并做优化对比。</li>
+              <li>部署一个有日志、限流、监控和安全策略的服务。</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note"><strong>最短可行路线：</strong>如果你想最快进入岗位面试，优先完成“工具调用助手 + RAG 知识库 + 状态图研究报告 Agent + eval 报告”四件作品。它们覆盖了当前 agent 工程岗位最常见的面试与实战能力。</p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      本文档由本地静态 HTML 组成，图示均为内嵌 SVG，不依赖外部图片资源。外部链接用于继续学习和查阅最新官方资料。
+    </div>
+  </footer>
+</body>
+</html>
